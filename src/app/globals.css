@@ -1,16 +1,17 @@
 :root {
-  /* Dr Rhona Aesthetic Palette */
-  --background: #FFFFFF;
-  --background-alt: #F5FFFD; /* Warm off-white */
-  --background-dark: #222430; /* Charcoal/Navy Hero */
-  --foreground: #111111;
+  /* Mixed Cinematic StorySite Theme */
+  --background: #0B0C10; /* Arbor Dental Deep Dark */
+  --background-alt: #16181D; /* Slightly lighter dark */
+  --background-dark: #000000;
+  --foreground: #E0E2E5;
   --foreground-light: #FFFFFF;
   
-  --primary: #006450; /* Dark Teal Signature Accent */
-  --primary-hover: #004d3e;
+  --primary: #C5A059; /* Warm Bronze/Gold (Luxury/Authority) */
+  --primary-hover: #D4AF37;
+  --accent: #E1007E; /* Luca Aesthetic pop, used sparingly */
   
-  --border: #E5E5E5;
-  --text-muted: #555555;
+  --border: #2A2D35;
+  --text-muted: #8B92A5;
   
   --font-serif: var(--font-dm-serif), 'Times New Roman', Times, serif;
   --font-sans: var(--font-roboto), Arial, Helvetica, sans-serif;
