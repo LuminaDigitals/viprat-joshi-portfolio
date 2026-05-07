@@ -1,17 +1,18 @@
 :root {
-  /* Mixed Cinematic StorySite Theme */
-  --background: #0B0C10; /* Arbor Dental Deep Dark */
-  --background-alt: #16181D; /* Slightly lighter dark */
-  --background-dark: #000000;
-  --foreground: #E0E2E5;
-  --foreground-light: #FFFFFF;
+  /* Light Cinematic Magazine Theme */
+  --background: #FFFFFF;
+  --background-alt: #F7F7F7; /* Soft light grey */
+  --background-dark: #111111; /* Kept for footer or dark sections */
+  
+  --foreground: #222222; /* Charcoal for text */
+  --foreground-light: #555555; /* Muted text */
   
   --primary: #C5A059; /* Warm Bronze/Gold (Luxury/Authority) */
   --primary-hover: #D4AF37;
   --accent: #E1007E; /* Luca Aesthetic pop, used sparingly */
   
-  --border: #2A2D35;
-  --text-muted: #8B92A5;
+  --border: #E5E5E5;
+  --text-muted: #777777;
   
   --font-serif: var(--font-dm-serif), 'Times New Roman', Times, serif;
   --font-sans: var(--font-roboto), Arial, Helvetica, sans-serif;

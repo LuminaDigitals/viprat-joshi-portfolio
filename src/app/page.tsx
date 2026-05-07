@@ -2,6 +2,13 @@ import styles from './page.module.css';
 import Image from 'next/image';
 
 export default function Home() {
+  // Replace these with Dr. Joshi's actual Instagram reel URLs
+  const instagramReels = [
+    "https://www.instagram.com/p/C-xyz123/embed", 
+    "https://www.instagram.com/p/C-abc456/embed",
+    "https://www.instagram.com/p/C-def789/embed"
+  ];
+
   return (
     <main>
       <nav className={styles.nav}>
@@ -20,7 +27,7 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.heroGrid}>
             
-            {/* Left Content (Dr Rhona Typography + Arbor Vibe) */}
+            {/* Left Content */}
             <div className={styles.heroContent}>
               <div className={styles.heroBadge}>
                 <span></span> Greater Vancouver Area
@@ -39,7 +46,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Visual (Luca Motion + Grand Street Abstract) */}
+            {/* Right Visual */}
             <div className={styles.heroVisual}>
               <div className={styles.visualGrid}>
                 <div className={styles.visualColumn}>
@@ -51,12 +58,16 @@ export default function Home() {
                     />
                   </div>
                   <div className={`${styles.visualBox} ${styles.small}`}>
-                     {/* Empty box for aesthetic block color */}
+                     <Image 
+                      src="/shapes.png" 
+                      alt="Abstract clinical elements" 
+                      fill
+                    />
                   </div>
                 </div>
                 <div className={`${styles.visualColumn} ${styles.offset}`}>
                   <div className={`${styles.visualBox} ${styles.small}`}>
-                    {/* Empty block */}
+                    <div style={{ width: '100%', height: '100%', background: 'var(--primary)', opacity: 0.1 }}></div>
                   </div>
                   <div className={`${styles.visualBox} ${styles.large}`}>
                     <Image 
@@ -104,6 +115,41 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="social" className={styles.socialSection}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <div>
+              <span className={styles.sectionSubtitle}>Community Education</span>
+              <h2 className={styles.sectionTitle}>Latest Insights</h2>
+            </div>
+            <div>
+              <p style={{ color: 'var(--text-muted)', maxWidth: '400px', fontSize: '0.9rem' }}>
+                Follow Dr. Joshi's surgical Q&As, prevention tips, and behind-the-scenes transformations.
+              </p>
+            </div>
+          </div>
+          
+          <div className={styles.socialGrid}>
+            {instagramReels.map((url, index) => (
+              <div key={index} className={styles.instagramEmbed}>
+                <iframe 
+                  src={url} 
+                  width="100%" 
+                  height="100%" 
+                  frameBorder="0" 
+                  scrolling="no" 
+                  allowTransparency={true}
+                  title={`Instagram Reel ${index + 1}`}
+                ></iframe>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <footer className={styles.footer}>
+        <p>© {new Date().getFullYear()} Dr. Viprat Joshi. All rights reserved.</p>
+      </footer>
     </main>
   );
 }
