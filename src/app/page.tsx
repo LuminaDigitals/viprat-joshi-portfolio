@@ -15,30 +15,36 @@ export default function Home() {
       </nav>
 
       <section className={styles.hero}>
-        <div className={styles.container} style={{ width: '100%' }}>
-          <div className={styles.heroContent}>
-            <h1 className={`${styles.title} animate-fade-in`}>
-              Precision Surgery.<br />
-              <span className={styles.gradientText}>Compassionate Care.</span>
-            </h1>
-            <p className={`${styles.subtitle} animate-fade-in delay-100`}>
-              Positioning specialized surgical excellence at the intersection of advanced technology and human connection. Serving the Greater Vancouver Area.
-            </p>
-            <div className={`${styles.ctaGroup} animate-fade-in delay-200`}>
-              <button className={styles.primaryButton}>Book Consultation</button>
-              <button className={styles.secondaryButton}>View Expertise</button>
-            </div>
-          </div>
-        </div>
-        <div className={`${styles.heroImageWrapper} animate-fade-in delay-300`}>
+        <div className={styles.heroImageWrapper}>
+          {/* Abstract backdrop representing high-end clinical aesthetic */}
           <Image 
-            src="/hero.png" 
-            alt="Dr. Viprat Joshi Portrait" 
-            width={700} 
-            height={900} 
+            src="/shapes.png" 
+            alt="Cinematic background" 
+            fill
             className={styles.heroImage}
             priority
           />
+        </div>
+        
+        <div className={styles.heroContent}>
+          <div className={styles.showreelWrapper}>
+            <button className={styles.playButton} aria-label="Play Showreel">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </button>
+            <span className={styles.showreelText}>Play Showreel</span>
+          </div>
+
+          <div className={styles.titleWrapper}>
+            <h1 className={styles.title}>
+              Precision Surgery.<br />
+              Compassionate Care.
+            </h1>
+            <p className={styles.subtitle}>
+              Positioning specialized surgical excellence at the intersection of advanced technology and human connection.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -46,7 +52,7 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <span className={styles.sectionSubtitle}>Where To Find Us</span>
-            <h2 className={styles.sectionTitle}>Greater Vancouver Clinics</h2>
+            <h2 className={styles.sectionTitle}>Greater Vancouver</h2>
           </div>
           <div className={styles.locationGrid}>
             <div className={styles.locationCard}>
@@ -74,9 +80,12 @@ export default function Home() {
           <div className={styles.socialGrid}>
             {[1, 2, 3, 4].map((item) => (
               <div key={item} className={styles.socialPost}>
-                <p>Social Video Placeholder</p>
-                <div className={styles.socialOverlay}>
-                  <span className={styles.playIcon}>▶</span>
+                {/* Fallback pattern block until real Instagram images are connected */}
+                <div style={{ width: '100%', height: '100%', background: 'var(--background-alt)' }}></div>
+                <div className={styles.playIconOverlay}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="white">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                 </div>
               </div>
             ))}
@@ -85,9 +94,7 @@ export default function Home() {
       </section>
 
       <footer className={styles.footer}>
-        <div className={styles.container}>
-          <p>© {new Date().getFullYear()} Dr. Viprat Joshi. All rights reserved.</p>
-        </div>
+        <p>© {new Date().getFullYear()} Dr. Viprat Joshi. All rights reserved.</p>
       </footer>
     </main>
   );

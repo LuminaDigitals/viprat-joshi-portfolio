@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Serif_Display, Roboto } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSerif = DM_Serif_Display({
+  weight: "400",
+  variable: "--font-dm-serif",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const roboto = Roboto({
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-roboto",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Viprat Joshi - Full-Stack Developer & Designer",
-  description: "Portfolio of Viprat Joshi, a creative full-stack web developer and UI/UX designer specializing in Next.js, React, and modern web technologies.",
+  title: "Dr. Viprat Joshi | Premier Dental Surgeon in Greater Vancouver",
+  description: "Precision Surgery. Compassionate Care. The personal brand and clinical expertise of Dr. Viprat Joshi.",
 };
 
 export default function RootLayout({
@@ -25,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}`}
+      className={`${dmSerif.variable} ${roboto.variable}`}
     >
       <body>{children}</body>
     </html>
