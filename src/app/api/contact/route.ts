@@ -1,25 +1,31 @@
 import { NextResponse } from 'next/server';
 
+// Replace this with your Google Apps Script Web App URL
+const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL || '';
+
 export async function POST(request: Request) {
   try {
     const data = await request.json();
-    
-    // LOGIC: Send to Google Sheets / Email Service
-    // For now, we log to console. 
-    // Recommended: Use a service like SheetDB (sheetdb.io) or Formspree.
-    console.log('New Contact Form Submission:', data);
 
-    /* 
-    Example for SheetDB:
-    await fetch('https://sheetdb.io/api/v1/YOUR_API_ID', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ data: [data] })
-    });
-    */
+    if (GOOGLE_SCRIPT_URL) {
+      // Send to Google Sheets + Email via Apps Script
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Google Script returned an error');
+      }
+    } else {
+      // Fallback: log to console if URL not configured yet
+      console.log('New Contact Form Submission (no Google Script URL configured):', data);
+    }
 
     return NextResponse.json({ message: 'Success' }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ message: 'Error' }, { status: 500 });
+    console.error('Contact form error:', error);
+    return NextResponse.json({ message: 'Error submitting form' }, { status: 500 });
   }
 }
