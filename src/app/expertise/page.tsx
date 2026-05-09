@@ -163,7 +163,7 @@ export default function Expertise() {
           <motion.div variants={revealUp} className={styles.clinicLinks}>
             <a href="https://douglasparkdental.ca/" target="_blank" rel="noopener noreferrer" className={styles.clinicLink}>Langley: Douglas Park</a>
             <a href="https://infinitydentalcare.ca/" target="_blank" rel="noopener noreferrer" className={styles.clinicLink}>North Vancouver: Infinity</a>
-            <a href="https://aarkdentalatcoquitlamcentre.com/" target="_blank" rel="noopener noreferrer" className={styles.clinicLink}>Coquitlam: AARK</a>
+            <a href="https://aarkdentistcoquitlamcentre.com/" target="_blank" rel="noopener noreferrer" className={styles.clinicLink}>Coquitlam: AARK</a>
           </motion.div>
 
           <motion.div variants={revealUp}>
