@@ -30,12 +30,13 @@ export default function Home() {
       <section className={styles.hero}>
         {/* Full-width Cinematic Image/Video */}
         <div className={styles.heroVideoWrapper}>
-          <Image 
-            src="/hero.png" /* Replace with high-res portrait or video */
-            alt="Dr. Viprat Joshi"
-            fill
-            className={styles.heroBg}
-            priority
+          <video 
+            src="/hero-video.mp4" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
         </div>
         <div className={styles.ambientBackground}></div>
