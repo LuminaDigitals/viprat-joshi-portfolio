@@ -1,5 +1,5 @@
 .hero {
-  min-height: 60vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   background-color: var(--background);
@@ -7,6 +7,7 @@
   overflow: hidden;
   padding: 10rem 4rem 4rem;
   position: relative;
+  text-align: center;
 }
 
 .ambientBackground {
@@ -23,15 +24,14 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  text-align: center;
 }
 
 .title {
-  font-size: clamp(3rem, 5vw, 5rem);
+  font-size: clamp(3.5rem, 6vw, 6rem);
   font-family: var(--font-serif);
   line-height: 1.1;
   margin-bottom: 1.5rem;
@@ -40,19 +40,43 @@
 .titleAccent {
   color: var(--primary);
   font-style: italic;
+  display: block;
 }
 
 .subtitle {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+/* Intro Section */
+.introSection {
+  padding: 6rem 4rem;
+  background: var(--background-alt);
+  text-align: center;
+}
+
+.introTitle {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--foreground);
+  margin-bottom: 2rem;
+}
+
+.introText {
+  font-size: 1.2rem;
   color: var(--foreground-light);
-  line-height: 1.6;
-  max-width: 700px;
+  line-height: 1.8;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-/* Grid Section */
-.expertiseSection {
-  padding: 4rem 4rem 8rem;
+/* Services Grid Section */
+.servicesSection {
+  padding: 8rem 4rem;
   background: var(--background);
 }
 
@@ -65,35 +89,152 @@
 }
 
 .card {
-  background: var(--background-alt);
+  background: #FFFFFF;
   padding: 4rem;
-  border-top: 4px solid transparent;
+  border-top: 4px solid var(--primary);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.02);
   transition: all 0.4s ease;
   position: relative;
 }
 
 .card:hover {
-  border-top-color: var(--primary);
   transform: translateY(-5px);
-  background: #FFFFFF;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.06);
 }
 
 .cardTitle {
   font-family: var(--font-serif);
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
   color: var(--foreground);
+}
+
+.cardSubtitle {
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  display: block;
 }
 
 .cardDesc {
   color: var(--foreground-light);
   font-size: 1.05rem;
   line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
-@media (max-width: 900px) {
-  .grid {
+.cardBullet {
+  padding: 1rem;
+  background: var(--background-alt);
+  border-left: 3px solid var(--accent);
+  font-size: 0.95rem;
+  color: var(--foreground-light);
+  line-height: 1.6;
+}
+
+/* Technology Section */
+.techSection {
+  padding: 8rem 4rem;
+  background: var(--background-dark);
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.techTitle {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  margin-bottom: 4rem;
+}
+
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.techItem {
+  text-align: left;
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.techItem h3 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.techItem p {
+  color: #CCCCCC;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 8rem 4rem;
+  background: var(--background);
+  text-align: center;
+}
+
+.ctaTitle {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.clinicLinks {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.clinicLink {
+  color: var(--foreground);
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.clinicLink:hover {
+  color: var(--primary);
+}
+
+.primaryButton {
+  display: inline-block;
+  padding: 1.25rem 3.5rem;
+  background: var(--primary);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .grid, .techGrid {
     grid-template-columns: 1fr;
+  }
+  .clinicLinks {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }
