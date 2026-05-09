@@ -3,6 +3,7 @@
 import styles from './page.module.css';
 import Navbar from '@/components/Navbar';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Philosophy() {
   const revealUp = {
@@ -13,23 +14,28 @@ export default function Philosophy() {
   const principles = [
     {
       title: "Compassionate Care",
-      text: "Every surgical journey begins with empathy. We prioritize your emotional comfort as much as your physical well-being, ensuring you feel heard and supported at every step."
+      text: "Every surgical journey begins with empathy. We prioritize your emotional comfort as much as your physical well-being, ensuring you feel heard and supported at every step.",
+      image: "/Compassionate Care.jpeg"
     },
     {
       title: "Unwavering Trust",
-      text: "Trust is the foundation of surgery. We build it through absolute transparency, detailed education, and a commitment to setting realistic, achievable expectations."
+      text: "Trust is the foundation of surgery. We build it through absolute transparency, detailed education, and a commitment to setting realistic, achievable expectations.",
+      image: "/shapes.png" // Fallback since only 4 images were provided
     },
     {
       title: "Human Connection",
-      text: "Beyond the clinical environment, we are people treating people. Our approach centers on building a genuine relationship rather than just a patient-doctor transaction."
+      text: "Beyond the clinical environment, we are people treating people. Our approach centers on building a genuine relationship rather than just a patient-doctor transaction.",
+      image: "/HumanConnection.jpeg"
     },
     {
       title: "Optimal Comfort",
-      text: "We redefine the surgical experience by minimizing anxiety and maximizing comfort. Our environment and techniques are designed to put you at complete ease."
+      text: "We redefine the surgical experience by minimizing anxiety and maximizing comfort. Our environment and techniques are designed to put you at complete ease.",
+      image: "/Patient Comfort First.jpeg"
     },
     {
       title: "Clinical Excellence",
-      text: "Precision is our baseline. Utilizing advanced technology and master-level surgical techniques, we deliver predictable, world-class aesthetic and functional outcomes."
+      text: "Precision is our baseline. Utilizing advanced technology and master-level surgical techniques, we deliver predictable, world-class aesthetic and functional outcomes.",
+      image: "/Excellence.jpeg"
     }
   ];
 
@@ -68,8 +74,9 @@ export default function Philosophy() {
               viewport={{ once: true, amount: 0.3 }}
               variants={revealUp}
             >
-              <div className={styles.principleNumber}>
-                0{idx + 1}
+              <div className={styles.principleImageWrapper}>
+                <Image src={principle.image} alt={principle.title} fill className={styles.principleImage} />
+                <div className={styles.principleNumber}>0{idx + 1}</div>
               </div>
               <div className={styles.principleContent}>
                 <h2 className={styles.principleTitle}>{principle.title}</h2>
