@@ -18,9 +18,9 @@ export default function Home() {
   };
 
   const instagramReels = [
-    "https://www.instagram.com/p/C-xyz123/embed", 
-    "https://www.instagram.com/p/C-abc456/embed",
-    "https://www.instagram.com/p/C-def789/embed"
+    "https://www.instagram.com/reel/DYCdAhUho5y/embed",  // Chocolate & Oral Care
+    "https://www.instagram.com/reel/DYA2ErRySsB/embed",  // Bleeding Gums Awareness
+    "https://www.instagram.com/reel/DXrdNvlDlRa/embed"   // Restoring Missing Teeth
   ];
 
   return (
@@ -109,13 +109,21 @@ export default function Home() {
         </div>
         <div className={styles.marqueeWrapper}>
           <div className={styles.marqueeContent}>
-            {[1, 2, 3, 4, 5].map((item) => (
-              <div key={item} className={styles.reviewCard}>
+            {[
+              { author: "Sarah H.", text: "Dr. Viprat Joshi is amazing. He did my wisdom teeth extraction and I didn't feel a thing. He is so calm and explained everything perfectly.", clinic: "Douglas Park Dental" },
+              { author: "Elena R.", text: "Had a full arch restoration with Dr. Joshi. He is the most compassionate surgeon I've ever met. He really listened to my fears and made me feel safe.", clinic: "Infinity Dental" },
+              { author: "Priya S.", text: "Dr. Joshi is incredible with patients who have dental anxiety. He is gentle, patient, and very thorough. Best surgical experience I've had.", clinic: "Aark Dental" },
+              { author: "Mark T.", text: "I was referred to Dr. Joshi for a complex implant case. He is truly a master of his craft. The results are perfect and the healing was very fast.", clinic: "Douglas Park Dental" },
+              { author: "David L.", text: "Dr. Viprat is a technical genius. My iTero scans and implant placement were so precise. I highly recommend him for any major dental work.", clinic: "Infinity Dental" },
+              { author: "Kevin G.", text: "The surgical precision Dr. Joshi brings to the table is unmatched. I had my wisdom teeth out and was back at work the next day. Zero pain.", clinic: "Aark Dental" }
+            ].map((review, idx) => (
+              <div key={idx} className={styles.reviewCard}>
                 <div className={styles.stars}>★★★★★</div>
-                <p className={styles.reviewText}>
-                  "Absolutely incredible experience. Dr. Joshi made a complex surgery feel completely painless and stress-free. The entire team was so compassionate."
-                </p>
-                <span className={styles.reviewAuthor}>- Sarah M., Google Review</span>
+                <p className={styles.reviewText}>"{review.text}"</p>
+                <div className={styles.reviewAuthor}>
+                  <strong>{review.author}</strong>
+                  <span>{review.clinic}</span>
+                </div>
               </div>
             ))}
           </div>
@@ -165,7 +173,7 @@ export default function Home() {
           variants={staggerContainer}
         >
           <div className={styles.sectionHeader}>
-            <motion.span variants={revealUp} className={styles.sectionSubtitle} style={{color: 'var(--accent)'}}>Community Education</motion.span>
+            <motion.span variants={revealUp} className={styles.sectionSubtitle} style={{color: 'var(--accent)'}}>@vipratj on Instagram</motion.span>
             <motion.h2 variants={revealUp} className={styles.sectionTitle}>Latest Insights</motion.h2>
           </div>
           
@@ -189,6 +197,17 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div variants={revealUp} style={{ textAlign: 'center', marginTop: '3rem' }}>
+            <a 
+              href="https://www.instagram.com/vipratj/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.secondaryLink}
+            >
+              Follow @vipratj on Instagram →
+            </a>
+          </motion.div>
         </motion.div>
       </section>
 
