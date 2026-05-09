@@ -313,6 +313,57 @@
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.locationAddress {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 0.25rem;
+}
+
+.locationHours {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1.25rem;
+}
+
+.locationActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.locationBtn {
+  padding: 0.6rem 1.25rem;
+  background: var(--primary);
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.locationBtn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.locationBtnOutline {
+  padding: 0.6rem 1.25rem;
+  background: transparent;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.locationBtnOutline:hover {
+  border-color: #FFFFFF;
+  background: rgba(255,255,255,0.1);
 }
 
 /* Social Wall */
