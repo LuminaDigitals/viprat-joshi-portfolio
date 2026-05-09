@@ -57,6 +57,7 @@ export default function Home() {
       </nav>
 
       <section className={styles.hero} style={{ position: 'relative' }}>
+        <div className={styles.ambientBackground}></div>
         {/* Cinematic Background Video Component */}
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden', opacity: 0.05 }}>
           <video 

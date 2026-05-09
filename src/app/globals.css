@@ -1,11 +1,11 @@
 :root {
   /* Grand Street Dental Theme */
-  --background: #FFFFFF;
+  --background: #FCFCFA; /* Warm Alabaster/Off-White instead of stark pure white */
   --background-alt: #E9E5DE; /* Beige block accent */
   --background-dark: #1F408D; /* Deep Navy */
   
   --foreground: #000000; /* Absolute Black for Headings */
-  --foreground-light: #666666; /* Charcoal Grey for body */
+  --foreground-light: #444444; /* Darker Charcoal for body */
   
   --primary: #266880; /* Teal CTA */
   --primary-hover: #1e5266;
