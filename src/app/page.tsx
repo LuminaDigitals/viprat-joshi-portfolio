@@ -27,33 +27,19 @@ export default function Home() {
     <main>
       <Navbar />
 
-      <section className={styles.hero}>
-        {/* Full-width Cinematic Image/Video */}
-        <div className={styles.heroVideoWrapper}>
-          <video 
-            src="/hero-video.mp4" 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-        </div>
-        <div className={styles.ambientBackground}></div>
-
-        <div className={styles.container}>
+      <section className={styles.heroRhona}>
+        <div className={styles.heroRhonaText}>
           <motion.div 
-            className={styles.heroContent}
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
           >
-            <motion.h1 variants={revealUp} className={styles.title}>
-              Precision.<br />
-              <span className={styles.titleAccent}>Compassion.</span>
+            <motion.h1 variants={revealUp} className={styles.rhonaQuote}>
+              "Precision surgery.<br />
+              <span className={styles.titleAccent}>Compassionate care."</span>
             </motion.h1>
-            <motion.p variants={revealUp} className={styles.subtitle}>
-              Positioning specialized surgical excellence at the intersection of advanced technology, artistry, and human connection.
+            <motion.p variants={revealUp} className={styles.rhonaSub}>
+              Dedicated to restoring function and confidence through advanced oral and maxillofacial surgery.
             </motion.p>
             <motion.div variants={revealUp}>
               <Link href="/contact">
@@ -63,6 +49,76 @@ export default function Home() {
               </Link>
             </motion.div>
           </motion.div>
+        </div>
+        <div className={styles.heroRhonaImage}>
+          <Image 
+            src="/hero.png" /* Portrait Image */
+            alt="Dr. Viprat Joshi Portrait"
+            fill
+            className={styles.rhonaPortrait}
+            priority
+          />
+        </div>
+      </section>
+
+      {/* Trust Banner / As Seen In */}
+      <section className={styles.trustBanner}>
+        <div className={styles.trustLogos}>
+          <span>Douglas Park Dental</span>
+          <span className={styles.dot}>•</span>
+          <span>Infinity Dental Care</span>
+          <span className={styles.dot}>•</span>
+          <span>AARK Dental</span>
+        </div>
+      </section>
+
+      {/* About Dr Joshi Snippet */}
+      <section className={styles.aboutSnippet}>
+        <motion.div 
+          className={styles.aboutContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={staggerContainer}
+        >
+          <div className={styles.aboutImageWrapper}>
+            <Image src="/Excellence.jpeg" alt="Dr Joshi in Clinic" fill className={styles.aboutImage} />
+          </div>
+          <div className={styles.aboutTextContent}>
+            <motion.h2 variants={revealUp} className={styles.sectionTitle}>Meet Dr. Joshi</motion.h2>
+            <motion.p variants={revealUp} className={styles.aboutParagraph}>
+              Dr. Viprat Joshi is a highly skilled dental surgeon serving the Greater Vancouver area. Known as the "Gentle Expert", he specializes in complex restorative procedures, including All-on-X full arch rehabilitations, advanced implantology, and maxillofacial surgery.
+            </motion.p>
+            <motion.p variants={revealUp} className={styles.aboutParagraph}>
+              His philosophy is simple: surgical excellence is merely the baseline. The true craft lies in human connection, ensuring every patient feels heard, comfortable, and confident in their care.
+            </motion.p>
+            <motion.div variants={revealUp} style={{ marginTop: '2rem' }}>
+              <Link href="/philosophy" className={styles.secondaryLink}>
+                Read Full Philosophy →
+              </Link>
+            </motion.div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Google Reviews Marquee */}
+      <section className={styles.reviewsSection}>
+        <div className={styles.sectionHeader}>
+          <span className={styles.sectionSubtitle}>Patient Stories</span>
+          <h2 className={styles.sectionTitle}>Words of Trust</h2>
+        </div>
+        <div className={styles.marqueeWrapper}>
+          <div className={styles.marqueeContent}>
+            {[1, 2, 3, 4, 5].map((item) => (
+              <div key={item} className={styles.reviewCard}>
+                <div className={styles.stars}>★★★★★</div>
+                <p className={styles.reviewText}>
+                  "Absolutely incredible experience. Dr. Joshi made a complex surgery feel completely painless and stress-free. The entire team was so compassionate."
+                </p>
+                <span className={styles.reviewAuthor}>- Sarah M., Google Review</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
