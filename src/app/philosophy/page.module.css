@@ -1,0 +1,108 @@
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow: hidden;
+  padding: 8rem 4rem 4rem;
+  position: relative;
+}
+
+.ambientBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 80% 20%, rgba(229, 154, 154, 0.04), transparent 50%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  font-family: var(--font-serif);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.titleAccent {
+  color: var(--primary);
+  font-style: italic;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--foreground-light);
+  line-height: 1.6;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+/* 5 Principles Section */
+.principlesSection {
+  padding: 6rem 4rem;
+  background-color: var(--background-alt);
+}
+
+.principleGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.principleItem {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.principleItem:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.principleNumber {
+  font-family: var(--font-serif);
+  font-size: 8rem;
+  color: var(--primary);
+  opacity: 0.2;
+  line-height: 1;
+}
+
+.principleContent {
+  flex: 1;
+}
+
+.principleTitle {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.principleText {
+  color: var(--foreground-light);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .principleItem, .principleItem:nth-child(even) {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+}

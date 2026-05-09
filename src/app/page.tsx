@@ -4,6 +4,8 @@ import styles from './page.module.css';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import Navbar from '@/components/Navbar';
+import Link from 'next/link';
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -34,27 +36,7 @@ export default function Home() {
 
   return (
     <main ref={containerRef} style={{ overflow: 'hidden' }}>
-      <nav className={styles.nav}>
-        <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className={styles.logo}
-        >
-          Dr. Viprat Joshi
-        </motion.div>
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className={styles.navLinks}
-        >
-          <a href="#about">Philosophy</a>
-          <a href="#expertise">Expertise</a>
-          <a href="#locations">Clinics</a>
-          <a href="#contact">Contact</a>
-        </motion.div>
-      </nav>
+      <Navbar />
 
       <section className={styles.hero} style={{ position: 'relative' }}>
         <div className={styles.ambientBackground}></div>
@@ -89,9 +71,11 @@ export default function Home() {
                 Positioning specialized surgical excellence at the intersection of advanced technology, artistry, and human connection.
               </motion.p>
               <motion.div variants={revealUp}>
-                <button className={styles.primaryButton}>
-                  Book Consultation
-                </button>
+                <Link href="/contact">
+                  <button className={styles.primaryButton}>
+                    Book Consultation
+                  </button>
+                </Link>
               </motion.div>
             </motion.div>
 
