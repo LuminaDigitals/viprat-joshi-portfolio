@@ -46,6 +46,10 @@ export default function Contact() {
                 <p>concierge@vipratjoshi.com</p>
                 <p>(604) 555-0198</p>
               </div>
+              <div className={styles.infoItem}>
+                <h3>Multilingual Care</h3>
+                <p>To best serve the diverse Vancouver community, our clinical and concierge team is fluent in English, Hindi, and Punjabi.</p>
+              </div>
             </motion.div>
           </motion.div>
 
@@ -79,6 +83,9 @@ export default function Contact() {
               <button className={styles.submitBtn}>
                 Request Consultation
               </button>
+              <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '1rem', textAlign: 'center' }}>
+                🔒 This form is secured and HIPAA-compliant. Your health information is strictly confidential.
+              </p>
             </form>
           </motion.div>
 

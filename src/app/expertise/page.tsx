@@ -17,20 +17,20 @@ export default function Expertise() {
 
   const expertiseAreas = [
     {
-      title: "Dental Implants",
-      desc: "Replacing missing teeth with titanium precision. Utilizing advanced 3D scanning and virtual planning, we ensure implants are placed with absolute accuracy for a lifetime of natural function and aesthetics."
+      title: "Maxillofacial Surgery & Implants",
+      desc: "Replacing missing teeth with titanium precision. Utilizing advanced CBCT (Cone Beam Computed Tomography) imaging and virtual planning, we ensure implants are placed with absolute accuracy for a lifetime of natural function."
     },
     {
-      title: "Teeth-in-a-Day",
-      desc: "A revolutionary approach to full-arch restoration. Walk in with compromised teeth and walk out the same day with a completely new, fixed smile supported by strategically placed implants."
+      title: "Teeth-in-a-Day (All-on-X)",
+      desc: "A revolutionary approach to full-arch restoration. Walk in with compromised teeth and walk out the same day with a completely new, fixed smile supported by strategically placed implants using advanced surgical guides."
     },
     {
-      title: "Wisdom Teeth Extraction",
-      desc: "Expert removal of impacted or problematic third molars. We prioritize advanced sedation and atraumatic techniques to ensure a comfortable procedure and rapid recovery."
+      title: "iTero 3D Digital Workflow",
+      desc: "We have completely eliminated messy impressions. Using the state-of-the-art iTero 3D scanning system, we capture hyper-accurate digital models of your mouth in minutes, ensuring perfect fitting prosthetics and crowns."
     },
     {
-      title: "Bone Grafting",
-      desc: "Rebuilding the foundation. When bone loss occurs, we use sophisticated grafting techniques to restore volume and density, creating a stable base for future implant placement."
+      title: "Complex Bone Grafting",
+      desc: "Rebuilding the foundation. When bone loss occurs, we use sophisticated grafting techniques to restore volume and density, creating a stable base for future implant placement and aesthetic facial structure."
     }
   ];
 

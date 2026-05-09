@@ -1,52 +1,16 @@
-/* Grand Street Dental Theme Styles */
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 4rem;
-}
-
-/* Nav */
-.nav {
+.hero {
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 2.5rem 4rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: transparent;
+  justify-content: center;
+  background-color: var(--background);
+  color: #FFFFFF; /* Force white text on full-screen image/video */
+  overflow: hidden;
+  padding: 8rem 4rem 4rem;
+  position: relative;
+  text-align: center;
 }
 
-.logo {
-  font-family: var(--font-sans);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--foreground);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.navLinks {
-  display: flex;
-  gap: 3rem;
-}
-
-.navLinks a {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--foreground);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  transition: color 0.3s ease;
-}
-
-.navLinks a:hover {
-  color: var(--primary);
-}
-
-/* Ambient Background Glow */
 .ambientBackground {
   position: absolute;
   top: 0;
@@ -54,118 +18,91 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  pointer-events: none;
-  background: 
-    radial-gradient(circle at 15% 50%, rgba(38, 104, 128, 0.03), transparent 50%),
-    radial-gradient(circle at 85% 30%, rgba(229, 154, 154, 0.04), transparent 50%),
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
 }
 
-/* Hero Section (Magazine Style) */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background-color: var(--background);
-  color: var(--foreground);
-  overflow: hidden;
-  padding-top: 6rem;
-}
-
-.heroGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.heroVideoWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 80vh;
-  gap: 4rem;
-  align-items: center;
+  height: 100%;
+  z-index: 0;
+}
+
+.heroVideoWrapper img, 
+.heroVideoWrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  width: 100%;
 }
 
 .heroContent {
   display: flex;
   flex-direction: column;
-  padding-right: 2rem;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .title {
-  font-size: clamp(3rem, 7vw, 7rem);
+  font-size: clamp(3.5rem, 8vw, 7rem);
   font-family: var(--font-serif);
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.05;
   margin-bottom: 2rem;
-  color: var(--foreground);
 }
 
 .titleAccent {
-  color: var(--accent);
+  color: var(--primary);
   font-style: italic;
-  display: block;
 }
 
 .subtitle {
   font-size: 1.25rem;
-  font-weight: 400;
-  color: var(--foreground-light);
-  line-height: 1.6;
-  max-width: 450px;
-  margin-bottom: 3rem;
+  font-weight: 300;
+  color: #EEEEEE;
+  line-height: 1.7;
+  max-width: 600px;
+  margin-bottom: 3.5rem;
 }
 
 .primaryButton {
   display: inline-block;
-  padding: 1.25rem 3rem;
+  padding: 1.25rem 3.5rem;
   background: var(--primary);
   color: #FFFFFF;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   border: none;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 2px;
 }
 
 .primaryButton:hover {
   background: var(--primary-hover);
-}
-
-/* Visual Right Side */
-.heroVisual {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  background: var(--background-alt);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.heroVisual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  mix-blend-mode: multiply;
-}
-
-.geometricShape {
-  position: absolute;
-  background: var(--accent);
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  bottom: -50px;
-  left: -50px;
-  z-index: 2;
+  transform: translateY(-2px);
 }
 
 /* Locations */
 .locationsSection {
   padding: 8rem 0;
-  background: var(--background);
+  background: var(--background-alt);
 }
 
 .sectionHeader {
+  text-align: center;
   margin-bottom: 4rem;
 }
 
@@ -173,8 +110,6 @@
   font-family: var(--font-serif);
   font-size: 3.5rem;
   color: var(--foreground);
-  line-height: 1.1;
-  margin-bottom: 1rem;
 }
 
 .sectionSubtitle {
@@ -194,46 +129,67 @@
 }
 
 .locationCard {
-  padding: 4rem 3rem;
-  background: var(--background-alt);
+  background: var(--background);
   transition: all 0.4s ease;
   cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 4px;
 }
 
-.locationCard:hover {
-  background: var(--primary);
+.locationCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+  z-index: 1;
+  transition: opacity 0.3s ease;
 }
 
-.locationCard:hover .locationCity, 
-.locationCard:hover .locationClinic {
+.locationCard:hover::before {
+  opacity: 0.9;
+}
+
+.locationImage {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 0.8s ease;
+}
+
+.locationCard:hover .locationImage {
+  transform: scale(1.05);
+}
+
+.locationContent {
+  position: relative;
+  z-index: 2;
+  padding: 3rem;
   color: #FFFFFF;
 }
 
 .locationCity {
   font-family: var(--font-serif);
   font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--foreground);
-  transition: color 0.3s ease;
+  margin-bottom: 0.5rem;
 }
 
 .locationClinic {
-  color: var(--foreground-light);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-size: 0.85rem;
   font-weight: 600;
-  transition: color 0.3s ease;
+  color: var(--primary);
 }
 
 /* Social Wall */
 .socialSection {
   padding: 8rem 0;
-  background: var(--background-dark);
-}
-
-.socialSection .sectionTitle {
-  color: #FFFFFF;
+  background: var(--background);
 }
 
 .socialGrid {
@@ -245,28 +201,57 @@
 .instagramEmbed {
   width: 100%;
   height: 500px;
-  background: #FFFFFF;
+  background: var(--background-alt);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 
-.footer {
-  padding: 4rem;
-  background: var(--background);
-  color: var(--foreground-light);
-  text-align: center;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
+/* Sticky Booking Bar */
+.stickyBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--foreground);
+  color: #FFFFFF;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+}
+
+.stickyText {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+}
+
+.stickyButton {
+  padding: 0.8rem 2rem;
+  background: var(--primary);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.8rem;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: none;
+  cursor: pointer;
 }
 
-@media (max-width: 1024px) {
-  .heroGrid {
+@media (max-width: 768px) {
+  .locationGrid {
     grid-template-columns: 1fr;
-    height: auto;
   }
-  .heroVisual {
-    height: 500px;
-  }
-  .navLinks {
+  .stickyText {
     display: none;
+  }
+  .stickyBar {
+    justify-content: center;
+    padding: 0.75rem;
+  }
+  .stickyButton {
+    width: 100%;
   }
 }
