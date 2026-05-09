@@ -152,21 +152,28 @@
 
 .marqueeWrapper {
   width: 100%;
-  overflow-x: auto;
-  padding: 2rem 4rem;
-  /* Hides scrollbar for clean look */
-  -ms-overflow-style: none;  
-  scrollbar-width: none;  
-}
-
-.marqueeWrapper::-webkit-scrollbar { 
-  display: none; 
+  overflow: hidden;
+  padding: 2rem 0;
 }
 
 .marqueeContent {
   display: flex;
   gap: 2rem;
   width: max-content;
+  animation: marqueeScroll 40s linear infinite;
+}
+
+.marqueeContent:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .reviewCard {
@@ -174,8 +181,15 @@
   padding: 3rem;
   border-radius: 4px;
   width: 400px;
+  min-width: 400px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.03);
   border-top: 3px solid var(--primary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reviewCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
 }
 
 .stars {
@@ -194,11 +208,20 @@
 }
 
 .reviewAuthor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--foreground);
   font-weight: 600;
+}
+
+.reviewAuthor span {
+  font-weight: 400;
+  color: var(--primary);
+  font-size: 0.75rem;
 }
 
 /* Locations */

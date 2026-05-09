@@ -109,6 +109,7 @@ export default function Home() {
         </div>
         <div className={styles.marqueeWrapper}>
           <div className={styles.marqueeContent}>
+            {/* First set */}
             {[
               { author: "Sarah H.", text: "Dr. Viprat Joshi is amazing. He did my wisdom teeth extraction and I didn't feel a thing. He is so calm and explained everything perfectly.", clinic: "Douglas Park Dental" },
               { author: "Elena R.", text: "Had a full arch restoration with Dr. Joshi. He is the most compassionate surgeon I've ever met. He really listened to my fears and made me feel safe.", clinic: "Infinity Dental" },
@@ -117,7 +118,25 @@ export default function Home() {
               { author: "David L.", text: "Dr. Viprat is a technical genius. My iTero scans and implant placement were so precise. I highly recommend him for any major dental work.", clinic: "Infinity Dental" },
               { author: "Kevin G.", text: "The surgical precision Dr. Joshi brings to the table is unmatched. I had my wisdom teeth out and was back at work the next day. Zero pain.", clinic: "Aark Dental" }
             ].map((review, idx) => (
-              <div key={idx} className={styles.reviewCard}>
+              <div key={`a-${idx}`} className={styles.reviewCard}>
+                <div className={styles.stars}>★★★★★</div>
+                <p className={styles.reviewText}>"{review.text}"</p>
+                <div className={styles.reviewAuthor}>
+                  <strong>{review.author}</strong>
+                  <span>{review.clinic}</span>
+                </div>
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {[
+              { author: "Sarah H.", text: "Dr. Viprat Joshi is amazing. He did my wisdom teeth extraction and I didn't feel a thing. He is so calm and explained everything perfectly.", clinic: "Douglas Park Dental" },
+              { author: "Elena R.", text: "Had a full arch restoration with Dr. Joshi. He is the most compassionate surgeon I've ever met. He really listened to my fears and made me feel safe.", clinic: "Infinity Dental" },
+              { author: "Priya S.", text: "Dr. Joshi is incredible with patients who have dental anxiety. He is gentle, patient, and very thorough. Best surgical experience I've had.", clinic: "Aark Dental" },
+              { author: "Mark T.", text: "I was referred to Dr. Joshi for a complex implant case. He is truly a master of his craft. The results are perfect and the healing was very fast.", clinic: "Douglas Park Dental" },
+              { author: "David L.", text: "Dr. Viprat is a technical genius. My iTero scans and implant placement were so precise. I highly recommend him for any major dental work.", clinic: "Infinity Dental" },
+              { author: "Kevin G.", text: "The surgical precision Dr. Joshi brings to the table is unmatched. I had my wisdom teeth out and was back at work the next day. Zero pain.", clinic: "Aark Dental" }
+            ].map((review, idx) => (
+              <div key={`b-${idx}`} className={styles.reviewCard}>
                 <div className={styles.stars}>★★★★★</div>
                 <p className={styles.reviewText}>"{review.text}"</p>
                 <div className={styles.reviewAuthor}>
