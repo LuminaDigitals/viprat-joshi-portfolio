@@ -110,31 +110,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="locations" className={styles.locationsSection}>
-        <motion.div 
-          className={styles.container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={staggerContainer}
-        >
-          <div className={styles.sectionHeader}>
-            <motion.span variants={revealUp} className={styles.sectionSubtitle}>Where To Find Us</motion.span>
-            <motion.h2 variants={revealUp} className={styles.sectionTitle}>Surgical Hubs</motion.h2>
-          </div>
-          
-          <motion.div className={styles.locationGrid} variants={staggerContainer}>
-            {['Langley', 'North Van', 'Coquitlam'].map((city, i) => (
-              <motion.div key={city} variants={revealUp} className={styles.locationCard}>
-                <h3 className={styles.locationCity}>{city}</h3>
-                <p className={styles.locationClinic}>
-                  {i === 0 ? 'Douglas Park Dental' : i === 1 ? 'Infinity Dental' : 'Aark Dental'}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </section>
+
 
       <section id="social" className={styles.socialSection}>
         <motion.div 

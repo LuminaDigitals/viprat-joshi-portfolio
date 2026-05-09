@@ -24,7 +24,7 @@ export default function Navbar() {
       >
         <Link href="/philosophy">Philosophy</Link>
         <Link href="/expertise">Expertise</Link>
-        <Link href="/#locations">Clinics</Link>
+        <Link href="/clinics">Clinics</Link>
         <Link href="/contact">Contact</Link>
       </motion.div>
     </nav>
