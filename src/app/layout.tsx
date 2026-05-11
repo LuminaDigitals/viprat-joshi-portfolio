@@ -15,6 +15,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://vipratjoshi.com'),
   title: "Dr. Viprat Joshi | Premier Dental Surgeon in Greater Vancouver",
   description: "Precision surgery and compassionate care. Specialized in complex restorative procedures, All-on-X, and advanced implantology serving Langley, North Vancouver, and Coquitlam.",
   openGraph: {
