@@ -16,7 +16,23 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Dr. Viprat Joshi | Premier Dental Surgeon in Greater Vancouver",
-  description: "Precision Surgery. Compassionate Care. The personal brand and clinical expertise of Dr. Viprat Joshi.",
+  description: "Precision surgery and compassionate care. Specialized in complex restorative procedures, All-on-X, and advanced implantology serving Langley, North Vancouver, and Coquitlam.",
+  icons: {
+    icon: '/favicon.png',
+    apple: '/apple-touch-icon.png',
+  },
+  openGraph: {
+    title: "Dr. Viprat Joshi | Surgical Excellence",
+    description: "Precision surgery and compassionate care. Specialized in complex restorative procedures serving the Greater Vancouver area.",
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Dr. Viprat Joshi Dental Surgery',
+      },
+    ],
+  },
 };
 
 import Footer from "@/components/Footer";
