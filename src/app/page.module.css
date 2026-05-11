@@ -43,7 +43,7 @@
 
 .rhonaPortrait {
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%; /* Keep head in view */
 }
 
 .primaryButton {
@@ -255,6 +255,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .locationCard {
@@ -434,12 +436,18 @@
 @media (max-width: 1024px) {
   .heroRhona {
     flex-direction: column;
+    min-height: auto;
   }
   .heroRhonaText {
     padding: 6rem 3rem;
+    order: 2;
   }
   .heroRhonaImage {
-    min-height: 50vh;
+    min-height: 70vh;
+    order: 1;
+  }
+  .rhonaPortrait {
+    object-position: center 20%;
   }
   .aboutContainer {
     flex-direction: column;

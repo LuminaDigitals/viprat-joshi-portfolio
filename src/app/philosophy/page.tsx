@@ -15,27 +15,27 @@ export default function Philosophy() {
     {
       title: "Compassionate Care",
       text: "Every surgical journey begins with empathy. We prioritize your emotional comfort as much as your physical well-being, ensuring you feel heard and supported at every step.",
-      image: "/Compassionate Care.jpeg"
+      image: "/compassionate-care.jpeg"
     },
     {
       title: "Unwavering Trust",
       text: "Trust is the foundation of surgery. We build it through absolute transparency, detailed education, and a commitment to setting realistic, achievable expectations.",
-      image: "/potrait.jpeg"
+      image: "/portrait.jpeg"
     },
     {
       title: "Human Connection",
       text: "Beyond the clinical environment, we are people treating people. Our approach centers on building a genuine relationship rather than just a patient-doctor transaction.",
-      image: "/HumanConnection.jpeg"
+      image: "/human-connection.jpeg"
     },
     {
       title: "Optimal Comfort",
       text: "We redefine the surgical experience by minimizing anxiety and maximizing comfort. Our environment and techniques are designed to put you at complete ease.",
-      image: "/Patient Comfort First.jpeg"
+      image: "/patient-comfort.jpeg"
     },
     {
       title: "Clinical Excellence",
       text: "Precision is our baseline. Utilizing advanced technology and master-level surgical techniques, we deliver predictable, world-class aesthetic and functional outcomes.",
-      image: "/Excellence.jpeg"
+      image: "/excellence.jpeg"
     }
   ];
 

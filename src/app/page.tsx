@@ -52,7 +52,7 @@ export default function Home() {
         </div>
         <div className={styles.heroRhonaImage}>
           <Image 
-            src="/potrait.jpeg" /* Portrait Image */
+            src="/portrait.jpeg" /* Portrait Image */
             alt="Dr. Viprat Joshi Portrait"
             fill
             className={styles.rhonaPortrait}
@@ -82,7 +82,7 @@ export default function Home() {
           variants={staggerContainer}
         >
           <div className={styles.aboutImageWrapper}>
-            <Image src="/Excellence.jpeg" alt="Dr Joshi in Clinic" fill className={styles.aboutImage} />
+            <Image src="/excellence.jpeg" alt="Dr Joshi in Clinic" fill className={styles.aboutImage} />
           </div>
           <div className={styles.aboutTextContent}>
             <motion.h2 variants={revealUp} className={styles.sectionTitle}>Meet Dr. Joshi</motion.h2>
