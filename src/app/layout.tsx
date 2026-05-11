@@ -37,6 +37,7 @@ export const metadata: Metadata = {
 
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 export default function RootLayout({
   children,
@@ -48,6 +49,9 @@ export default function RootLayout({
       lang="en"
       className={`${dmSerif.variable} ${roboto.variable}`}
     >
+      <head>
+        <SchemaMarkup />
+      </head>
       <body>
         {children}
         <Footer />
