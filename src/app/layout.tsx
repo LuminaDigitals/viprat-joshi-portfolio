@@ -36,6 +36,7 @@ export const metadata: Metadata = {
 };
 
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({
   children,
@@ -50,6 +51,7 @@ export default function RootLayout({
       <body>
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
