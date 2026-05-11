@@ -35,8 +35,7 @@ export default function Footer() {
 
         <div className={styles.footerCol}>
           <h4>Connect</h4>
-          <p>concierge@vipratjoshi.com</p>
-          <p>(604) 555-0198</p>
+          <p>vipratjoshi@gmail.com</p>
         </div>
       </div>
 

@@ -70,8 +70,7 @@ export default function Contact() {
               </div>
               <div className={styles.infoItem}>
                 <h3>Direct Inquiry</h3>
-                <p>concierge@vipratjoshi.com</p>
-                <p>(604) 555-0198</p>
+                <p>vipratjoshi@gmail.com</p>
               </div>
               <div className={styles.infoItem}>
                 <h3>Multilingual Care</h3>
