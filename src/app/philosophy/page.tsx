@@ -20,7 +20,7 @@ export default function Philosophy() {
     {
       title: "Unwavering Trust",
       text: "Trust is the foundation of surgery. We build it through absolute transparency, detailed education, and a commitment to setting realistic, achievable expectations.",
-      image: "/shapes.png" // Fallback since only 4 images were provided
+      image: "/potrait.jpeg"
     },
     {
       title: "Human Connection",

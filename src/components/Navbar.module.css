@@ -1,8 +1,4 @@
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 4rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -15,6 +11,15 @@
   transition: all 0.3s ease;
 }
 
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 .logo {
   font-family: var(--font-sans);
   font-size: 1.1rem;
@@ -25,12 +30,12 @@
   text-decoration: none;
 }
 
-.navLinks {
+.desktopLinks {
   display: flex;
   gap: 3rem;
 }
 
-.navLinks a {
+.desktopLinks a {
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--foreground);
@@ -40,12 +45,72 @@
   text-decoration: none;
 }
 
-.navLinks a:hover {
+.desktopLinks a:hover {
   color: var(--primary);
 }
 
+.mobileToggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10001;
+}
+
+.mobileToggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--foreground);
+  transition: all 0.3s ease;
+}
+
+.mobileToggle.active span:first-child {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobileToggle.active span:last-child {
+  transform: translateY(-0px) rotate(-45deg);
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 10000;
+  padding: 2rem;
+}
+
+.mobileMenu a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
 @media (max-width: 1024px) {
-  .navLinks {
+  .navContainer {
+    padding: 1rem 2rem;
+  }
+
+  .desktopLinks {
     display: none;
+  }
+
+  .mobileToggle {
+    display: flex;
   }
 }
