@@ -90,7 +90,7 @@ export default function Expertise() {
           variants={staggerContainer}
         >
           <motion.h2 variants={revealUp} className={styles.introTitle}>
-            The Meticulous Edge: Why Choose a Dental Surgeon?
+            The leading Edge: Why Choose a Dental Surgeon?
           </motion.h2>
           <motion.p variants={revealUp} className={styles.introText}>
             When it comes to complex restorative and reconstructive procedures, experience and precision are paramount. Dr. Viprat Joshi brings a meticulously detailed approach to every procedure, combining advanced surgical training with a commitment to patient comfort. By integrating state-of-the-art technology with a "Gentle Expert" touch, Dr. Joshi ensures that even the most complex surgeries are stress-free and result in long-term oral health.

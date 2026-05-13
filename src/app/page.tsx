@@ -19,7 +19,7 @@ export default function Home() {
 
   const instagramReels = [
     "https://www.instagram.com/reel/DYCdAhUho5y/embed",  // Chocolate & Oral Care
-    "https://www.instagram.com/reel/DYA2ErRySsB/embed",  // Bleeding Gums Awareness
+    "https://www.instagram.com/reel/DXjjhYaBYyL/embed",  // Bleeding Gums Awareness
     "https://www.instagram.com/reel/DXrdNvlDlRa/embed"   // Restoring Missing Teeth
   ];
 
@@ -29,7 +29,7 @@ export default function Home() {
 
       <section className={styles.heroRhona}>
         <div className={styles.heroRhonaText}>
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
@@ -51,7 +51,7 @@ export default function Home() {
           </motion.div>
         </div>
         <div className={styles.heroRhonaImage}>
-          <Image 
+          <Image
             src="/portrait.jpeg" /* Portrait Image */
             alt="Dr. Viprat Joshi Portrait"
             fill
@@ -74,7 +74,7 @@ export default function Home() {
 
       {/* About Dr Joshi Snippet */}
       <section className={styles.aboutSnippet}>
-        <motion.div 
+        <motion.div
           className={styles.aboutContainer}
           initial="hidden"
           whileInView="visible"
@@ -151,7 +151,7 @@ export default function Home() {
 
       {/* Multi-Location Hub */}
       <section className={styles.locationsSection}>
-        <motion.div 
+        <motion.div
           className={styles.container}
           initial="hidden"
           whileInView="visible"
@@ -162,32 +162,32 @@ export default function Home() {
             <motion.span variants={revealUp} className={styles.sectionSubtitle}>Where To Find Us</motion.span>
             <motion.h2 variants={revealUp} className={styles.sectionTitle}>Surgical Hubs</motion.h2>
           </div>
-          
+
           <motion.div className={styles.locationGrid} variants={staggerContainer}>
             {[
-              { 
-                city: 'Langley', 
-                clinic: 'Douglas Park Dental', 
+              {
+                city: 'Langley',
+                clinic: 'Douglas Park Dental',
                 img: '/douglas-park.png',
                 address: '20571 Douglas Cres, Langley, BC V3A 4B6',
                 phone: '(778) 726-0125',
                 hours: 'Mon–Sat 9am–5pm',
                 website: 'https://douglasparkdental.ca/',
                 directions: 'https://www.google.com/maps/dir//49.102995,-122.6525408'
-              }, 
-              { 
-                city: 'North Van', 
-                clinic: 'Infinity Dental Care', 
+              },
+              {
+                city: 'North Van',
+                clinic: 'Infinity Dental Care',
                 img: '/infinity-dental.png',
                 address: '233 West 1st St, North Vancouver, BC',
                 phone: '(778) 488-0815',
                 hours: 'Mon–Thu 10am–7pm',
                 website: 'https://infinitydentalcare.ca/',
                 directions: 'https://www.google.com/maps/search/Infinity+Dental+Care+North+Vancouver'
-              }, 
-              { 
-                city: 'Coquitlam', 
-                clinic: 'AARK Dental', 
+              },
+              {
+                city: 'Coquitlam',
+                clinic: 'AARK Dental',
                 img: '/aark-dental.png',
                 address: '2929 Barnet Hwy #2310, Coquitlam, BC V3B 5R5',
                 phone: '(604) 554-0244',
@@ -220,7 +220,7 @@ export default function Home() {
 
       {/* Social Wall */}
       <section id="social" className={styles.socialSection}>
-        <motion.div 
+        <motion.div
           className={styles.container}
           initial="hidden"
           whileInView="visible"
@@ -228,24 +228,24 @@ export default function Home() {
           variants={staggerContainer}
         >
           <div className={styles.sectionHeader}>
-            <motion.span variants={revealUp} className={styles.sectionSubtitle} style={{color: 'var(--accent)'}}>@vipratj on Instagram</motion.span>
+            <motion.span variants={revealUp} className={styles.sectionSubtitle} style={{ color: 'var(--accent)' }}>@vipratj on Instagram</motion.span>
             <motion.h2 variants={revealUp} className={styles.sectionTitle}>Latest Insights</motion.h2>
           </div>
-          
+
           <div className={styles.socialGrid}>
             {instagramReels.map((url, index) => (
-              <motion.div 
-                key={index} 
-                variants={revealUp} 
+              <motion.div
+                key={index}
+                variants={revealUp}
                 className={styles.instagramEmbed}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
               >
-                <iframe 
-                  src={url} 
-                  width="100%" 
-                  height="100%" 
-                  frameBorder="0" 
-                  scrolling="no" 
+                <iframe
+                  src={url}
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  scrolling="no"
                   allowTransparency={true}
                   title={`Instagram Reel ${index + 1}`}
                 ></iframe>
@@ -254,10 +254,10 @@ export default function Home() {
           </div>
 
           <motion.div variants={revealUp} style={{ textAlign: 'center', marginTop: '3rem' }}>
-            <a 
-              href="https://www.instagram.com/vipratj/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://www.instagram.com/vipratj/"
+              target="_blank"
+              rel="noopener noreferrer"
               className={styles.secondaryLink}
             >
               Follow @vipratj on Instagram →
@@ -267,7 +267,7 @@ export default function Home() {
       </section>
 
       {/* Sticky Booking Bar */}
-      <motion.div 
+      <motion.div
         className={styles.stickyBar}
         initial={{ y: 100 }}
         animate={{ y: 0 }}
