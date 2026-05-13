@@ -23,14 +23,14 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
-    
+
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      
+
       if (res.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', phone: '', message: '' });
@@ -49,8 +49,8 @@ export default function Contact() {
       <section className={styles.hero}>
         <div className={styles.ambientBackground}></div>
         <div className={styles.container}>
-          
-          <motion.div 
+
+          <motion.div
             className={styles.content}
             initial="hidden"
             animate="visible"
@@ -62,7 +62,7 @@ export default function Contact() {
             <motion.p variants={revealUp} className={styles.subtitle}>
               Whether you need complex surgical rehabilitation or a consultation for a single extraction, our team is ready to guide you.
             </motion.p>
-            
+
             <motion.div variants={revealUp} className={styles.contactInfo}>
               <div className={styles.infoItem}>
                 <h3>Consultations</h3>
@@ -74,12 +74,12 @@ export default function Contact() {
               </div>
               <div className={styles.infoItem}>
                 <h3>Multilingual Care</h3>
-                <p>To best serve the diverse Vancouver community, our clinical and concierge team is fluent in English, Hindi, and Punjabi.</p>
+                <p>To best serve the diverse Vancouver community, our clinical and concierge team is fluent in English, Hindi, Gujarati and Punjabi.</p>
               </div>
             </motion.div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className={styles.formWrapper}
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -88,22 +88,22 @@ export default function Contact() {
             <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.inputGroup}>
                 <label className={styles.label}>Full Name</label>
-                <input 
-                  type="text" 
-                  className={styles.input} 
-                  placeholder="John Doe" 
+                <input
+                  type="text"
+                  className={styles.input}
+                  placeholder="John Doe"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 />
               </div>
-              
+
               <div className={styles.inputGroup}>
                 <label className={styles.label}>Email Address</label>
-                <input 
-                  type="email" 
-                  className={styles.input} 
-                  placeholder="john@example.com" 
+                <input
+                  type="email"
+                  className={styles.input}
+                  placeholder="john@example.com"
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -112,10 +112,10 @@ export default function Contact() {
 
               <div className={styles.inputGroup}>
                 <label className={styles.label}>Phone Number</label>
-                <input 
-                  type="tel" 
-                  className={styles.input} 
-                  placeholder="(604) 555-0000" 
+                <input
+                  type="tel"
+                  className={styles.input}
+                  placeholder="(604) 555-0000"
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -124,9 +124,9 @@ export default function Contact() {
 
               <div className={styles.inputGroup}>
                 <label className={styles.label}>How can we help?</label>
-                <textarea 
-                  className={styles.textarea} 
-                  placeholder="Please describe your surgical needs..." 
+                <textarea
+                  className={styles.textarea}
+                  placeholder="Please describe your surgical needs..."
                   required
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -136,13 +136,13 @@ export default function Contact() {
               <button className={styles.submitBtn} disabled={status === 'submitting'}>
                 {status === 'submitting' ? 'Sending...' : status === 'success' ? 'Sent!' : 'Request Consultation'}
               </button>
-              
+
               {status === 'error' && (
                 <p style={{ color: 'red', marginTop: '1rem', textAlign: 'center' }}>
                   There was an error sending your message. Please try again.
                 </p>
               )}
-              
+
               <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '1rem', textAlign: 'center' }}>
                 🔒 This form is secured and HIPAA-compliant. Your health information is strictly confidential.
               </p>

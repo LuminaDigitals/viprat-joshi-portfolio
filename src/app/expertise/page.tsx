@@ -75,14 +75,14 @@ export default function Expertise() {
               <span className={styles.titleAccent}>Advanced Reconstruction.</span>
             </motion.h1>
             <motion.p variants={revealUp} className={styles.subtitle}>
-              Precision Surgery Meets Compassionate Care in Langley and North Vancouver
+              Precision Surgery Meets Compassionate Care in Langley, Coquitlam and North Vancouver
             </motion.p>
           </motion.div>
         </div>
       </section>
 
       <section className={styles.introSection}>
-        <motion.div 
+        <motion.div
           className={styles.container}
           initial="hidden"
           whileInView="visible"
@@ -90,7 +90,7 @@ export default function Expertise() {
           variants={staggerContainer}
         >
           <motion.h2 variants={revealUp} className={styles.introTitle}>
-            The Specialist Edge: Why Choose a Dental Surgeon?
+            The Meticulous Edge: Why Choose a Dental Surgeon?
           </motion.h2>
           <motion.p variants={revealUp} className={styles.introText}>
             When it comes to complex restorative and reconstructive procedures, experience and precision are paramount. Dr. Viprat Joshi brings a meticulously detailed approach to every procedure, combining advanced surgical training with a commitment to patient comfort. By integrating state-of-the-art technology with a "Gentle Expert" touch, Dr. Joshi ensures that even the most complex surgeries are stress-free and result in long-term oral health.
@@ -99,7 +99,7 @@ export default function Expertise() {
       </section>
 
       <section className={styles.servicesSection}>
-        <motion.div 
+        <motion.div
           className={styles.grid}
           initial="hidden"
           whileInView="visible"
@@ -107,8 +107,8 @@ export default function Expertise() {
           variants={staggerContainer}
         >
           {services.map((service, idx) => (
-            <motion.div 
-              key={idx} 
+            <motion.div
+              key={idx}
               className={styles.card}
               variants={revealUp}
             >
@@ -124,7 +124,7 @@ export default function Expertise() {
       </section>
 
       <section className={styles.techSection}>
-        <motion.div 
+        <motion.div
           className={styles.container}
           initial="hidden"
           whileInView="visible"
@@ -146,7 +146,7 @@ export default function Expertise() {
       </section>
 
       <section className={styles.ctaSection}>
-        <motion.div 
+        <motion.div
           className={styles.container}
           initial="hidden"
           whileInView="visible"
@@ -159,11 +159,11 @@ export default function Expertise() {
           <motion.p variants={revealUp} style={{ marginBottom: '3rem', color: 'var(--foreground-light)', fontSize: '1.2rem' }}>
             Dr. Joshi provides specialized surgical care across three convenient locations:
           </motion.p>
-          
+
           <motion.div variants={revealUp} className={styles.clinicLinks}>
-            <a href="https://douglasparkdental.ca/" target="_blank" rel="noopener noreferrer" className={styles.clinicLink}>Langley: Douglas Park</a>
-            <a href="https://infinitydentalcare.ca/" target="_blank" rel="noopener noreferrer" className={styles.clinicLink}>North Vancouver: Infinity</a>
-            <a href="https://aarkdentistcoquitlamcentre.com/" target="_blank" rel="noopener noreferrer" className={styles.clinicLink}>Coquitlam: AARK</a>
+            <a href="https://douglasparkdental.ca/" target="_blank" rel="noopener noreferrer" className={styles.clinicLink}>Langley: Douglas Park Dental</a>
+            <a href="https://infinitydentalcare.ca/" target="_blank" rel="noopener noreferrer" className={styles.clinicLink}>North Vancouver: Infinity Dental Care</a>
+            <a href="https://aarkdentistcoquitlamcentre.com/" target="_blank" rel="noopener noreferrer" className={styles.clinicLink}>Coquitlam: AARK Dental</a>
           </motion.div>
 
           <motion.div variants={revealUp}>
