@@ -28,6 +28,13 @@ export default function Home() {
       <Navbar />
 
       <section className={styles.heroRhona}>
+        {/* Massive stacked background text mimicking 'MIND BODY SPIRIT' */}
+        <div className={styles.heroDecorativeText}>
+          <div>ORAL</div>
+          <div>SURGERY</div>
+          <div>SPECIALIST</div>
+        </div>
+        
         <div className={styles.heroRhonaText}>
           <motion.div
             variants={staggerContainer}
@@ -52,9 +59,10 @@ export default function Home() {
         </div>
         <div className={styles.heroRhonaImage}>
           <Image
-            src="/potrait2.jpeg" /* Portrait Image */
+            src="/portrait2_transparent.png" /* Transparent Portrait Image */
             alt="Dr. Viprat Joshi Portrait"
-            fill
+            width={800}
+            height={1000}
             className={styles.rhonaPortrait}
             priority
           />

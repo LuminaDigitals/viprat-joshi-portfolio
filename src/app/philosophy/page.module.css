@@ -156,6 +156,9 @@
   .principleImageWrapper {
     width: 100%;
     height: 350px;
+    min-height: 350px; /* Prevent flex collapse */
+    flex-shrink: 0; /* Prevent flex squishing */
+    position: relative; /* Ensure absolute children (Next Image) render correctly */
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
 
@@ -191,6 +194,7 @@
 
   .principleImageWrapper {
     height: 280px;
+    min-height: 280px;
   }
 
   .principleNumber {

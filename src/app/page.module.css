@@ -1,55 +1,80 @@
 .heroRhona {
   display: flex;
-  min-height: 100vh;
-  background: radial-gradient(circle at top left, #FFFFFF 0%, var(--background) 100%);
-  padding-top: 6rem; /* Account for navbar */
+  min-height: 85vh;
+  /* Exact background from the photo: White top, fading to grey at the bottom */
+  background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #D8D8D8 100%);
+  padding-top: 5rem;
   position: relative;
   overflow: hidden;
 }
 
+.heroDecorativeText {
+  position: absolute;
+  top: 50%;
+  left: 4rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  line-height: 0.75; /* Tighter vertical stacking */
+  font-family: var(--font-sans);
+  font-size: clamp(6rem, 15vw, 18rem); /* Larger to act as texture */
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.02); /* Extremely faint so it doesn't clash */
+  z-index: 1;
+  pointer-events: none;
+}
+
 .heroRhonaText {
-  flex: 1;
+  flex: 1.2;
   display: flex;
   align-items: center;
-  padding: 4rem 8rem;
-  z-index: 2;
+  padding: 4rem 4rem 4rem 8rem;
+  z-index: 4;
+  position: relative;
 }
 
 .rhonaQuote {
   font-family: var(--font-serif);
-  font-size: clamp(3.5rem, 7vw, 5.5rem);
-  color: var(--foreground);
-  line-height: 1.05;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--primary); /* Blue text like the 'Solutions for Food Addiction' */
+  line-height: 1.1;
   margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
 }
 
 .titleAccent {
-  color: var(--primary);
+  color: var(--foreground);
   font-style: italic;
   display: block;
   margin-top: 0.5rem;
 }
 
 .rhonaSub {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--foreground-light);
   line-height: 1.8;
   max-width: 520px;
   margin-bottom: 3.5rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .heroRhonaImage {
   flex: 1;
   position: relative;
-  padding: 4rem 4rem 4rem 0; /* Float effect padding on desktop */
-  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end; /* Touches the exact bottom edge like the photo */
+  padding: 0 4rem 0 0; /* Brings it closer to the edge but not perfectly flush */
+  z-index: 3;
 }
 
 .rhonaPortrait {
+  width: auto;
+  max-width: none; /* Allow it to scale past container if needed */
+  height: 95vh; /* Massive scale to fill the top void and act as a pillar */
+  max-height: 1100px;
   object-fit: contain;
-  object-position: center;
+  object-position: bottom right; /* Anchored to bottom right */
+  border-radius: 0;
 }
 
 .primaryButton {
