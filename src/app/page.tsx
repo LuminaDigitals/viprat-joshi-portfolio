@@ -52,7 +52,7 @@ export default function Home() {
         </div>
         <div className={styles.heroRhonaImage}>
           <Image
-            src="/portrait.jpeg" /* Portrait Image */
+            src="/potrait2.jpeg" /* Portrait Image */
             alt="Dr. Viprat Joshi Portrait"
             fill
             className={styles.rhonaPortrait}
