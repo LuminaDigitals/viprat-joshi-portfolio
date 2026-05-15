@@ -48,10 +48,8 @@
 }
 
 .rhonaPortrait {
-  object-fit: cover;
-  object-position: center 25%; /* Adjusting for new portrait2 focus */
-  border-radius: 12px;
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12);
+  object-fit: contain;
+  object-position: center;
 }
 
 .primaryButton {
@@ -458,8 +456,8 @@
     padding: 2rem; /* Uniform padding on mobile so it floats */
   }
   .rhonaPortrait {
-    object-position: center 20%;
-    border-radius: 8px; /* Slightly smaller radius on mobile */
+    object-position: center;
+    object-fit: contain;
   }
   .aboutContainer {
     flex-direction: column;
