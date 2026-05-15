@@ -470,18 +470,21 @@
   .heroRhona {
     flex-direction: column;
     min-height: auto;
+    overflow: visible; /* Prevent clipping on mobile */
   }
   .heroRhonaText {
-    padding: 6rem 3rem;
+    padding: 3rem 2rem; /* Tighter padding on mobile */
     order: 2;
   }
   .heroRhonaImage {
-    min-height: 70vh;
+    min-height: auto; /* Remove explicit min-height */
     order: 1;
-    padding: 2rem; /* Uniform padding on mobile so it floats */
+    padding: 0; /* Remove padding so it spans width */
+    margin-top: 2rem; /* Breathing room from navbar */
   }
   .rhonaPortrait {
-    object-position: center;
+    height: 60vh; /* Scaled down for mobile stacking */
+    object-position: bottom center;
     object-fit: contain;
   }
   .aboutContainer {
