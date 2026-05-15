@@ -28,16 +28,6 @@ export default function Home() {
       <Navbar />
 
       <section className={styles.heroRhona}>
-        <div className={styles.heroBackground}>
-          <Image
-            src="/potrait2.jpeg"
-            alt="Dr. Viprat Joshi"
-            fill
-            className={styles.rhonaPortrait}
-            priority
-          />
-          <div className={styles.heroOverlay} />
-        </div>
         <div className={styles.heroRhonaText}>
           <motion.div
             variants={staggerContainer}
@@ -59,6 +49,15 @@ export default function Home() {
               </Link>
             </motion.div>
           </motion.div>
+        </div>
+        <div className={styles.heroRhonaImage}>
+          <Image
+            src="/potrait2.jpeg" /* Portrait Image */
+            alt="Dr. Viprat Joshi Portrait"
+            fill
+            className={styles.rhonaPortrait}
+            priority
+          />
         </div>
       </section>
 
