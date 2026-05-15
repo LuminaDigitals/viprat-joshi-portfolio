@@ -1,18 +1,38 @@
 .heroRhona {
-  display: flex;
-  min-height: 100vh;
-  background: radial-gradient(circle at top left, #FFFFFF 0%, var(--background) 100%);
-  padding-top: 6rem; /* Account for navbar */
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 5rem;
   overflow: hidden;
 }
 
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.rhonaPortrait {
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  /* Premium fade: solid near text, transparent over the portrait */
+  background: linear-gradient(to right, rgba(252, 252, 250, 0.95) 0%, rgba(252, 252, 250, 0.7) 40%, rgba(252, 252, 250, 0) 100%);
+}
+
 .heroRhonaText {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  padding: 4rem 8rem;
+  position: relative;
   z-index: 2;
+  padding: 4rem 8rem;
+  max-width: 900px;
 }
 
 .rhonaQuote {
@@ -37,19 +57,7 @@
   line-height: 1.8;
   max-width: 520px;
   margin-bottom: 3.5rem;
-  font-weight: 300;
-}
-
-.heroRhonaImage {
-  flex: 1;
-  position: relative;
-  padding: 4rem 4rem 4rem 0; /* Float effect padding on desktop */
-  z-index: 2;
-}
-
-.rhonaPortrait {
-  object-fit: contain;
-  object-position: center;
+  font-weight: 400;
 }
 
 .primaryButton {
@@ -445,19 +453,24 @@
   .heroRhona {
     flex-direction: column;
     min-height: auto;
+    padding-top: 5rem;
+  }
+  .heroBackground {
+    position: relative;
+    height: 60vh;
+    width: 100%;
+    order: 1;
+  }
+  .heroOverlay {
+    background: linear-gradient(to top, var(--background) 0%, rgba(252, 252, 250, 0) 40%);
   }
   .heroRhonaText {
-    padding: 6rem 3rem;
+    padding: 3rem 2rem 5rem 2rem;
     order: 2;
-  }
-  .heroRhonaImage {
-    min-height: 70vh;
-    order: 1;
-    padding: 2rem; /* Uniform padding on mobile so it floats */
   }
   .rhonaPortrait {
     object-position: center;
-    object-fit: contain;
+    object-fit: cover;
   }
   .aboutContainer {
     flex-direction: column;
