@@ -9,6 +9,13 @@ import { useState } from 'react';
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', clinic: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const clinics = [
+    "Langley: Douglas Park Dental",
+    "North Van: Infinity Dental Care",
+    "Coquitlam: AARK Dental"
+  ];
 
   const revealUp = {
     hidden: { opacity: 0, y: 30 },
@@ -122,19 +129,40 @@ export default function Contact() {
                 />
               </div>
 
-              <div className={styles.inputGroup}>
+              <div className={styles.inputGroup} style={{ position: 'relative' }}>
                 <label className={styles.label}>Preferred Clinic</label>
-                <select
-                  className={styles.select}
-                  required
-                  value={formData.clinic}
-                  onChange={(e) => setFormData({ ...formData, clinic: e.target.value })}
+                <div 
+                  className={styles.customSelect} 
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 >
-                  <option value="" disabled>Select a location</option>
-                  <option value="Langley: Douglas Park Dental">Langley: Douglas Park Dental</option>
-                  <option value="North Van: Infinity Dental Care">North Van: Infinity Dental Care</option>
-                  <option value="Coquitlam: AARK Dental">Coquitlam: AARK Dental</option>
-                </select>
+                  <span style={{ color: formData.clinic ? 'var(--foreground)' : '#999' }}>
+                    {formData.clinic || 'Select a location'}
+                  </span>
+                  <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>
+                    <path d="M1 1.5L6 6.5L11 1.5" stroke="#444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                
+                {isDropdownOpen && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={styles.dropdownMenu}
+                  >
+                    {clinics.map(clinic => (
+                      <div 
+                        key={clinic} 
+                        className={styles.dropdownItem}
+                        onClick={() => {
+                          setFormData({ ...formData, clinic });
+                          setIsDropdownOpen(false);
+                        }}
+                      >
+                        {clinic}
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
               </div>
 
               <div className={styles.inputGroup}>
