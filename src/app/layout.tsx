@@ -36,6 +36,7 @@ import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 
 export default function RootLayout({
   children,
@@ -55,6 +56,8 @@ export default function RootLayout({
         <Footer />
         <Analytics />
         <SpeedInsights />
+        {process.env.NEXT_PUBLIC_GTM_ID && <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />}
+        {process.env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />}
       </body>
     </html>
   );

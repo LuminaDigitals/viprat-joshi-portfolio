@@ -131,9 +131,9 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, clinic: e.target.value })}
                 >
                   <option value="" disabled>Select a location</option>
-                  <option value="Douglas Park Dental (Langley)">Douglas Park Dental (Langley)</option>
-                  <option value="Infinity Dental Care (North Vancouver)">Infinity Dental Care (North Vancouver)</option>
-                  <option value="AARK Dental (Coquitlam)">AARK Dental (Coquitlam)</option>
+                  <option value="Langley: Douglas Park Dental">Langley: Douglas Park Dental</option>
+                  <option value="North Van: Infinity Dental Care">North Van: Infinity Dental Care</option>
+                  <option value="Coquitlam: AARK Dental">Coquitlam: AARK Dental</option>
                 </select>
               </div>
 
