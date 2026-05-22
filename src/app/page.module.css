@@ -470,20 +470,24 @@
   .heroRhona {
     flex-direction: column;
     min-height: auto;
-    overflow: visible; /* Prevent clipping on mobile */
+    overflow: hidden; /* Prevent clipping on mobile but hide overflow x */
   }
   .heroRhonaText {
     padding: 3rem 2rem; /* Tighter padding on mobile */
     order: 2;
   }
   .heroRhonaImage {
-    min-height: auto; /* Remove explicit min-height */
+    min-height: auto;
     order: 1;
-    padding: 0; /* Remove padding so it spans width */
-    margin-top: 2rem; /* Breathing room from navbar */
+    padding: 0;
+    margin-top: 2rem;
+    justify-content: center; /* Override desktop flex-end to center it */
+    align-items: center;
+    width: 100%;
   }
   .rhonaPortrait {
-    height: 60vh; /* Scaled down for mobile stacking */
+    height: 60vh;
+    width: 100%; /* Force it to span full width so object-position works */
     object-position: bottom center;
     object-fit: contain;
   }
@@ -528,5 +532,24 @@
   }
   .dot {
     display: none;
+  }
+  .heroRhonaText {
+    padding: 2rem 1.5rem;
+  }
+  .aboutSnippet {
+    padding: 4rem 1.5rem;
+  }
+  .locationsSection, .socialSection {
+    padding: 4rem 1.5rem;
+  }
+  .reviewsSection {
+    padding: 4rem 0;
+  }
+  .heroDecorativeText {
+    font-size: clamp(3rem, 15vw, 5rem);
+    left: 1rem;
+  }
+  .rhonaQuote {
+    font-size: 2.2rem;
   }
 }

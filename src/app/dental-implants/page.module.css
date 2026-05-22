@@ -1,0 +1,228 @@
+/* dental-implants/page.module.css */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow: hidden;
+  padding: 10rem 4rem 4rem;
+  position: relative;
+  text-align: center;
+}
+
+.ambientBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 50% 100%, rgba(38, 104, 128, 0.05), transparent 60%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  font-family: var(--font-serif);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.titleAccent {
+  color: var(--primary);
+  font-style: italic;
+  display: block;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.ctaGroupHero {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.primaryButton {
+  display: inline-block;
+  padding: 1.25rem 3.5rem;
+  background: var(--primary);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  display: inline-block;
+  padding: 1.25rem 3.5rem;
+  background: transparent;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: 2px solid var(--primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background: var(--primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+
+/* Intro Section */
+.introSection {
+  padding: 6rem 4rem;
+  background: var(--background-alt);
+  text-align: center;
+}
+
+.introTitle {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--foreground);
+  margin-bottom: 2rem;
+}
+
+.introText {
+  font-size: 1.2rem;
+  color: var(--foreground-light);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Services Grid Section */
+.servicesSection {
+  padding: 8rem 4rem;
+  background: var(--background);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #FFFFFF;
+  padding: 4rem;
+  border-top: 4px solid var(--primary);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.02);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+.cardSubtitle {
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.cardDesc {
+  color: var(--foreground-light);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.cardBullet {
+  padding: 1rem;
+  background: var(--background-alt);
+  border-left: 3px solid var(--accent);
+  font-size: 0.95rem;
+  color: var(--foreground-light);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 8rem 4rem;
+  background: var(--background);
+  text-align: center;
+}
+
+.ctaTitle {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.ctaGroup {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .ctaGroupHero, .ctaGroup {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 8rem 1.5rem 3rem;
+  }
+  .title {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+  .introSection, .servicesSection, .ctaSection {
+    padding: 4rem 1.5rem;
+  }
+  .card {
+    padding: 2.5rem 1.5rem;
+  }
+}

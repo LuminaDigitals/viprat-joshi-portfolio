@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', clinic: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   const revealUp = {
@@ -33,7 +33,7 @@ export default function Contact() {
 
       if (res.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', clinic: '', message: '' });
       } else {
         setStatus('error');
       }
@@ -123,6 +123,21 @@ export default function Contact() {
               </div>
 
               <div className={styles.inputGroup}>
+                <label className={styles.label}>Preferred Clinic</label>
+                <select
+                  className={styles.select}
+                  required
+                  value={formData.clinic}
+                  onChange={(e) => setFormData({ ...formData, clinic: e.target.value })}
+                >
+                  <option value="" disabled>Select a location</option>
+                  <option value="Douglas Park Dental (Langley)">Douglas Park Dental (Langley)</option>
+                  <option value="Infinity Dental Care (North Vancouver)">Infinity Dental Care (North Vancouver)</option>
+                  <option value="AARK Dental (Coquitlam)">AARK Dental (Coquitlam)</option>
+                </select>
+              </div>
+
+              <div className={styles.inputGroup}>
                 <label className={styles.label}>How can we help?</label>
                 <textarea
                   className={styles.textarea}
@@ -151,6 +166,25 @@ export default function Contact() {
 
         </div>
       </section>
+
+      {status === 'success' && (
+        <div className={styles.popupOverlay}>
+          <motion.div 
+            className={styles.popupContent}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            <h2 className={styles.popupTitle}>Thank You.</h2>
+            <p className={styles.popupText}>
+              Your consultation request has been successfully submitted. Our team will review your details and reach out to you shortly.
+            </p>
+            <button className={styles.popupButton} onClick={() => setStatus('idle')}>
+              Close
+            </button>
+          </motion.div>
+        </div>
+      )}
 
     </main>
   );
