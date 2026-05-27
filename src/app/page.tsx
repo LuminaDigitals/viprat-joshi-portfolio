@@ -5,8 +5,12 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
+import { useState } from 'react';
+import ConsultationModal from '@/components/ConsultationModal';
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const revealUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } }
@@ -49,11 +53,9 @@ export default function Home() {
               Dedicated to restoring function and confidence through advanced oral and maxillofacial surgery.
             </motion.p>
             <motion.div variants={revealUp}>
-              <Link href="/contact">
-                <button className={styles.primaryButton}>
-                  Book Consultation
-                </button>
-              </Link>
+              <button className={styles.primaryButton} onClick={() => setIsModalOpen(true)}>
+                Book Consultation
+              </button>
             </motion.div>
           </motion.div>
         </div>
@@ -282,10 +284,10 @@ export default function Home() {
         transition={{ delay: 1, duration: 0.5, ease: "easeOut" }}
       >
         <span className={styles.stickyText}>Ready to redefine your smile?</span>
-        <Link href="/contact" style={{ width: 'auto' }}>
-          <button className={styles.stickyButton}>Request Appointment</button>
-        </Link>
+        <button className={styles.stickyButton} onClick={() => setIsModalOpen(true)}>Request Appointment</button>
       </motion.div>
+
+      <ConsultationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
     </main>
   );
