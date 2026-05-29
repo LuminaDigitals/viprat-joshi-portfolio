@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./ConsultationModal.module.css";
 
@@ -13,6 +13,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", clinic: "", message: "" });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const originalUrlRef = useRef<string>("");
 
   const clinics = [
     "Langley: Douglas Park Dental",
@@ -23,6 +24,11 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
   // Reset state when modal opens/closes
   useEffect(() => {
     if (!isOpen) {
+      // Restore URL if we pushed /thank-you
+      if (originalUrlRef.current && window.location.pathname === "/thank-you") {
+        window.history.replaceState(null, "", originalUrlRef.current);
+        originalUrlRef.current = "";
+      }
       // Delay reset so close animation plays with current state
       const timer = setTimeout(() => {
         setFormData({ name: "", email: "", phone: "", clinic: "", message: "" });
@@ -32,6 +38,29 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
       return () => clearTimeout(timer);
     }
   }, [isOpen]);
+
+  // Push /thank-you virtual pageview on successful submission for GTM tracking
+  useEffect(() => {
+    if (status === "success") {
+      originalUrlRef.current = window.location.pathname + window.location.search;
+      window.history.pushState({ thankYou: true }, "", "/thank-you");
+    }
+  }, [status]);
+
+  // Handle browser back button: if user presses back from /thank-you, close the modal
+  useEffect(() => {
+    const handlePopState = () => {
+      if (status === "success") {
+        originalUrlRef.current = ""; // URL already restored by back navigation
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener("popstate", handlePopState);
+      return () => window.removeEventListener("popstate", handlePopState);
+    }
+  }, [isOpen, status, onClose]);
 
   // Lock body scroll when modal is open
   useEffect(() => {

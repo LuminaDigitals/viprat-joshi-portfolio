@@ -4,7 +4,7 @@ import styles from './page.module.css';
 import Navbar from '@/components/Navbar';
 import { motion } from 'framer-motion';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', clinic: '', message: '' });
@@ -47,6 +47,38 @@ export default function Contact() {
     } catch (error) {
       setStatus('error');
     }
+  };
+
+  // Push /contact/thank-you virtual pageview on successful submission for GTM tracking
+  const thankYouPushedRef = useRef(false);
+
+  useEffect(() => {
+    if (status === 'success' && !thankYouPushedRef.current) {
+      window.history.pushState({ thankYou: true }, '', '/contact/thank-you');
+      thankYouPushedRef.current = true;
+    }
+  }, [status]);
+
+  // Handle browser back button from /contact/thank-you
+  useEffect(() => {
+    const handlePopState = () => {
+      if (status === 'success') {
+        thankYouPushedRef.current = false;
+        setStatus('idle');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [status]);
+
+  const handleCloseThankYou = () => {
+    // Restore URL back to /contact
+    if (window.location.pathname === '/contact/thank-you') {
+      window.history.replaceState(null, '', '/contact');
+    }
+    thankYouPushedRef.current = false;
+    setStatus('idle');
   };
 
   return (
@@ -207,7 +239,7 @@ export default function Contact() {
             <p className={styles.popupText}>
               Your consultation request has been successfully submitted. Our team will review your details and reach out to you shortly.
             </p>
-            <button className={styles.popupButton} onClick={() => setStatus('idle')}>
+            <button className={styles.popupButton} onClick={handleCloseThankYou}>
               Close
             </button>
           </motion.div>
