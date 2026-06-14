@@ -36,6 +36,7 @@ import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import SchemaMarkup from "@/components/SchemaMarkup";
+import Script from 'next/script';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 
 export default function RootLayout({
@@ -51,6 +52,19 @@ export default function RootLayout({
       {process.env.NEXT_PUBLIC_GTM_ID && <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />}
       <head>
         <SchemaMarkup />
+        {/* Google tag (gtag.js) - Google Ads */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18192904645"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18192904645');
+          `}
+        </Script>
       </head>
       <body>
         {children}
